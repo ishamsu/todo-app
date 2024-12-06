@@ -47,7 +47,7 @@ export const useTodoStore = create<iTodoState>()(
 					set((state) => {
 						return {
 							todos: state.todos.filter((todo) => {
-								todo.id !== id;
+								return todo.id !== id;
 							}),
 						};
 					});

@@ -9,7 +9,7 @@ import TodoItem from "@/components/TodoItem";
 export default function Home() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [selectedDate, setSelectedDate] = useState(new Date());
-	const {todos, toggleTodo} = useTodoStore();
+	const {todos, toggleTodo, deleteTodo} = useTodoStore();
 
 	console.log("display todos after saving", todos);
 
@@ -25,7 +25,14 @@ export default function Home() {
 				</h3>
 				<div className="flex flex-col gap-4 ">
 					{todos.map((todo) => {
-						return <TodoItem key={todo.id} todo={todo} onToggle={toggleTodo} />;
+						return (
+							<TodoItem
+								key={todo.id}
+								todo={todo}
+								onToggle={toggleTodo}
+								onDelete={deleteTodo}
+							/>
+						);
 					})}
 				</div>
 				<div className="relative">
