@@ -1,0 +1,287 @@
+{
+	"env": {
+		"browser": true,
+		"es2023": true
+	},
+	"extends": [
+		"next/core-web-vitals",
+		"eslint:recommended",
+		"next",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "tsconfig.json",
+		"ecmaFeatures": {
+			"jsx": true,
+			"modules": true,
+			"templateStrings": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"createDefaultProgram": true
+	},
+	"plugins": [
+		"react",
+		"@typescript-eslint",
+		"@typescript-eslint/eslint-plugin",
+		"import",
+		"prettier"
+	],
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		},
+		"react": {
+			"version": "detect"
+		}
+	},
+	"ignorePatterns": [
+		"next.config.js",
+		"**/lottie/*.json",
+		"*.svg",
+		"**/build/*",
+		"commitlint.config.js"
+	],
+	"rules": {
+		"react/no-unknown-property": ["error", {"ignore": ["css"]}],
+
+		"prettier/prettier": [
+			"error",
+			{
+				"singleQuote": false,
+				"bracketSameLine": false,
+				"endOfLine": "auto"
+			}
+		],
+		"react/jsx-filename-extension": [
+			1,
+			{"extensions": [".js", ".tsx", ".jsx"]}
+		],
+		"react/jsx-indent": [
+			"error",
+			"tab",
+			{
+				"checkAttributes": false,
+				"indentLogicalExpressions": true
+			}
+		],
+		"react/jsx-indent-props": [2, "tab"],
+		"no-use-before-define": "off",
+		"no-shadow": "off",
+		"@typescript-eslint/no-use-before-define": "off",
+		// Commented out due to an incorrect error reported globally.
+		// See ref: https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916
+		// See Also: https://stackoverflow.com/a/63862578
+		// "no-use-before-define": [
+		// 	"error",
+		// 	{"functions": true, "classes": true, "variables": true}
+		// ],
+		"react/jsx-one-expression-per-line": "off",
+		"react/jsx-closing-bracket-location": [1, "line-aligned"],
+		"quotes": ["error", "double", {"allowTemplateLiterals": true}],
+		"semi": ["error", "always"],
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"no-console": "off",
+		"no-tabs": [
+			"off",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"arrow-parens": ["error", "always"],
+		"arrow-body-style": ["error", "always"],
+		"comma-dangle": "off",
+		"import/extensions": [
+			"error",
+			"never",
+			{
+				"js": "never",
+				"jsx": "never",
+				"ts": "never",
+				"tsx": "never",
+				"json": "always"
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					"builtin",
+					"external",
+					"internal",
+					"parent",
+					"sibling",
+					"index",
+					"object",
+					"type"
+				],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "builtin",
+						"position": "before"
+					},
+					{
+						"pattern": "react-native",
+						"group": "builtin",
+						"position": "before"
+					},
+					{
+						"pattern": "react-native/**",
+						"group": "builtin"
+					},
+					{
+						"pattern": "@store/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@services/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@components/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@screens/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@config/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@customTypes/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@utils/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@assets/**",
+						"group": "internal",
+						"position": "before"
+					},
+					{
+						"pattern": "@styles/**",
+						"group": "internal",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["builtin"],
+				"newlines-between": "always"
+			}
+		],
+		"react/prefer-stateless-function": [0, {"ignorePureComponents": true}],
+		"spaced-comment": [0, "always"],
+
+		"import/prefer-default-export": "off",
+
+		"class-methods-use-this": "off",
+
+		"react/require-default-props": "off",
+
+		"react/prop-types": [
+			"error",
+			{"ignore": ["navigation", "state", "descriptors"]}
+		],
+
+		// disabled because typescript has already its own checks
+		// refer: https://stackoverflow.com/a/64197516
+		"no-undef": "off",
+
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+
+		// turned off as we're using @typescript-eslint/no-unused-vars.
+		// For more details: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unused-vars.md#how-to-use
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				"vars": "all",
+				"args": "after-used",
+				"ignoreRestSiblings": false
+			}
+		],
+
+		"@typescript-eslint/ban-types": "off",
+
+		"@typescript-eslint/naming-convention": [
+			"error",
+			// Enforce that all variables, functions and properties follow are camelCase
+			// See: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md#enforce-that-all-variables-functions-and-properties-follow-are-camelcase
+			{"selector": "variableLike", "format": ["camelCase"]},
+
+			// Enforce that boolean variables are prefixed with an allowed verb
+			// See: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
+			{
+				"selector": "variable",
+				"types": ["boolean"],
+				"format": ["PascalCase"],
+				"prefix": ["is", "should", "has", "can", "did", "will"]
+			},
+
+			// Enforce that all const variables are either in UPPER_CASE, or PascalCase or camelCase
+			{
+				"selector": "variable",
+				"modifiers": ["const"],
+				"format": ["UPPER_CASE", "PascalCase", "camelCase"]
+			},
+
+			// Enforce that all functions are either in PascalCase or camelCase
+			{
+				"selector": "function",
+				"format": ["PascalCase", "camelCase"]
+			},
+
+			// Enforce that interface names begin with an i
+			// See: https://stackoverflow.com/a/62915767/6793156
+			{
+				"selector": "interface",
+				"format": ["camelCase"],
+				"custom": {
+					"regex": "^i[A-Z]",
+					"match": true
+				}
+			}
+		],
+
+		"react/function-component-definition": "off",
+
+		// added as the default air-bnb configuration incorrectly warning direct state mutation
+		// of redux-toolkit (which is powered with immer-js).
+		// See: https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations
+		"no-param-reassign": [
+			"error",
+			{"props": true, "ignorePropertyModificationsFor": ["state"]}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"rules": {
+				"@typescript-eslint/no-shadow": "off",
+				"no-shadow": "off",
+				"no-undef": "off"
+			}
+		}
+	]
+}
