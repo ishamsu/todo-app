@@ -9,7 +9,7 @@ import "./globals.css";
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang="en" className={`font-serif`}>
-			<body className="min-h-screen h-screen bg-background font-mono antialiased">
+			<body className="min-h-screen h-screen bg-[#EFF1F3] font-mono antialiased">
 				<main>{children}</main>
 			</body>
 		</html>
