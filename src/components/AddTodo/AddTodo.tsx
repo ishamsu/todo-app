@@ -54,7 +54,7 @@ export function AddTodo({date}: {date: Date}) {
 	return (
 		<Dialog open={isOpen} onOpenChange={setOpen}>
 			<DialogTrigger asChild>
-				<Button className="h-14 w-14 rounded-full fixed bottom-16 left-1/2 transform -translate-x-1/2 shadow-lg bg-background hover:bg-gray-200 dark:hover:bg-gray-700 group">
+				<Button className="h-16 w-16  mb-10 rounded-full z-10 shadow-xl bg-background hover:bg-gray-200 dark:hover:bg-gray-700 group">
 					{/* ---------------FIX IT LATER---------------------------
 					tailwindcss is not working here (w-[size] and h-[size])! 
 					size prop from lucid-react not working!
