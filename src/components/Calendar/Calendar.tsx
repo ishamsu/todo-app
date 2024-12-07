@@ -128,7 +128,7 @@ export function Calendar({
 												variant="ghost"
 											>
 												<div
-													className={`text-center text-sm font-semibold ${
+													className={`text-center text-lg font-medium ${
 														isSameDay(date, selectedDate)
 															? "text-primary-foreground"
 															: "text-muted-foreground"
@@ -136,7 +136,7 @@ export function Calendar({
 												>
 													{["S", "M", "T", "W", "T", "F", "S"][dateIndex]}
 												</div>
-												<div className={`text-lg font-bold`}>
+												<div className={`text-xl font-bold`}>
 													{date.getDate()}
 												</div>
 											</Button>
