@@ -1,3 +1,12 @@
+/**
+ * Todos
+ * - frontend validations
+ * - write a schema using joi (https://joi.dev/)
+ * - implement loader
+ * - disable the btn if its loading
+ * - DONT USE INLINE STYLE,  convert all inline styles into tailwindcss style
+ */
+
 "use client";
 
 import * as React from "react";
@@ -55,11 +64,13 @@ export function AddTodo({date}: {date: Date}) {
 		<Dialog open={isOpen} onOpenChange={setOpen}>
 			<DialogTrigger asChild>
 				<Button className="h-16 w-16  mb-10 rounded-full z-10 shadow-xl bg-background hover:bg-gray-200 dark:hover:bg-gray-700 group">
-					{/* ---------------FIX IT LATER---------------------------
-					tailwindcss is not working here (w-[size] and h-[size])! 
+					{/*
+					---------------------------------------------------------
+					tailwindcss is not working here (w-[size] and h-[size])!
 					size prop from lucid-react not working!
-					So used inline styles as a temporory fix 
-					------------------FIX IT LATER---------------------- */}
+					So used inline styles as a temporory fix
+					---------------------------------------------------------- */}
+
 					<Plus
 						className="text-primary group-hover:text-gray-700 dark:group-hover:text-gray-200"
 						style={{width: "29px", height: "29px"}}
@@ -68,16 +79,16 @@ export function AddTodo({date}: {date: Date}) {
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>Add New Task</DialogTitle>
+					<DialogTitle>Add New Todo</DialogTitle>
 				</DialogHeader>
 				<form onSubmit={handleSubmit} className="space-y-4 mt-4">
 					<Input
-						placeholder="Task title"
+						placeholder="Todo title"
 						value={title}
 						onChange={handleInputChangeTitle}
 					/>
 					<Input
-						placeholder="Task description"
+						placeholder="Todo description"
 						value={description}
 						onChange={handleInputChangeDesc}
 					/>

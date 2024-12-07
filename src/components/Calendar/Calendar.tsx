@@ -1,3 +1,9 @@
+/**
+ * Todos
+ * - By dafult show current day in the center
+ * - hide scroll bar or style the scroll bar
+ */
+
 "use client";
 
 import React, {useState, useRef, useEffect} from "react";
@@ -61,10 +67,11 @@ export function Calendar({
 	};
 
 	useEffect(() => {
+		//-----------------------------------------------
 		// when page loads show current day at the center
 		// we can make it by scrolling it to center
 		// make sure its center in mobile and tablets
-		// ---------IMPLEMENT IT LATER--------------------
+		// ----------------------------------------------
 		if (scrollRef.current) {
 			scrollRef.current.scrollLeft = scrollRef.current.offsetWidth;
 		}
