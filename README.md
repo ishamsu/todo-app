@@ -1,19 +1,18 @@
 # Todo web app
 
 ### Author
+
 Shamsudheen K C  
 [Email](mailto:ishamsumusthafa@gmail.com)  
 [GitHub Profile](https://github.com/ishamsu)
 
-| Mobile, list todos  screen       | Mobile, add todo screen        | 
-|---------------------------|-------------------------|
-| ![mobile-screen-list-todos](/public/images/mobile-list-todos.webp) | ![mobile-screen-add-todo](/public/images/mobile-add-todo-drawer.webp) 
+| Mobile, list todos screen                                          | Mobile, add todo screen                                               |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| ![mobile-screen-list-todos](/public/images/mobile-list-todos.webp) | ![mobile-screen-add-todo](/public/images/mobile-add-todo-drawer.webp) |
 
-| Desktop, list todos  screen       | Desktop, add todo screen        | 
-|---------------------------|-------------------------|
-| ![desktop-screen-list-todos](/public/images/desktop-list-todos.webp) | ![desktop-screen-add-todo](/public/images/desktop-add-todo-modal.webp) 
-
-
+| Desktop, list todos screen                                           | Desktop, add todo screen                                               |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ![desktop-screen-list-todos](/public/images/desktop-list-todos.webp) | ![desktop-screen-add-todo](/public/images/desktop-add-todo-modal.webp) |
 
 ### Reference to the tools and converntions I used in to make code organized, readable and maintainable
 
@@ -33,21 +32,21 @@ Shamsudheen K C
 
 You can install the depentencies via yarn
 
-```yarn install```
+`yarn install`
 
 ### Usage
 
 Run linter
 
-```yarn lint```
+`yarn lint`
 
 Run the development server
 
-```yarn run dev```
+`yarn run dev`
 
 Bundle code for production
 
-```yarn run build```
+`yarn run build`
 
 ### License
 
