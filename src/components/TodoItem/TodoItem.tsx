@@ -14,12 +14,20 @@ import {Pencil, Save, Trash} from "lucide-react";
 
 import {iTodo} from "@/store/TodoStore";
 import TodosConstants from "@/config/constants/TodosConstants";
+import {useIsMobile} from "@/hooks/use-mobile";
 
 import CheckBox from "../CheckBox";
 import Button from "../Button";
 import Input from "../Input";
 import Dialog from "../Dialog";
 import {DialogContent, DialogHeader, DialogTitle} from "../Dialog/Dialog";
+import Drawer from "../Drawer";
+import {
+	DrawerContent,
+	DrawerFooter,
+	DrawerHeader,
+	DrawerTitle,
+} from "../Drawer/Drawer";
 
 interface iTodoItemProps {
 	todo: iTodo;
@@ -29,6 +37,7 @@ interface iTodoItemProps {
 }
 
 export function TodoItem({todo, onToggle, onDelete, onEdit}: iTodoItemProps) {
+	const isMobile = useIsMobile();
 	const [isEditing, setIsEditing] = React.useState(false);
 	const [editedTitle, setEditedTitle] = React.useState(todo.title);
 	const [editedDescription, setEditedDescription] = React.useState(
@@ -41,6 +50,38 @@ export function TodoItem({todo, onToggle, onDelete, onEdit}: iTodoItemProps) {
 	};
 
 	if (isEditing) {
+		if (isMobile) {
+			return (
+				<Drawer open={isEditing} onOpenChange={setIsEditing}>
+					<DrawerContent>
+						<DrawerHeader className="text-left">
+							<DrawerTitle>Edit todo</DrawerTitle>
+						</DrawerHeader>
+						<form className="space-y-4 mt-3 px-4 mb-4">
+							<Input
+								value={editedTitle}
+								onChange={(e) => {
+									return setEditedTitle(e.target.value);
+								}}
+								placeholder="Todo title"
+							/>
+							<Input
+								value={editedDescription}
+								onChange={(e) => {
+									return setEditedDescription(e.target.value);
+								}}
+								placeholder="Todo description"
+							/>
+						</form>
+						<DrawerFooter className="pt-2">
+							<Button className="w-full" onClick={handleSave}>
+								<Save /> Save
+							</Button>
+						</DrawerFooter>
+					</DrawerContent>
+				</Drawer>
+			);
+		}
 		return (
 			<Dialog open={isEditing} onOpenChange={setIsEditing}>
 				<DialogContent>
