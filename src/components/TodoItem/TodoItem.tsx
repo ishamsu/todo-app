@@ -48,7 +48,7 @@ export function TodoItem({todo, onToggle, onDelete}: iTodoItemProps) {
 						onDelete(todo.id);
 					}}
 				>
-					<Trash className="h-4 w-4" />
+					<Trash className="h-4 w-4 text-destructive" />
 				</Button>
 			</div>
 		</div>
