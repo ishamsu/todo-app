@@ -1,5 +1,8 @@
 {
 	"name": "todo-web-app",
+	"description": "a functional and beautiful todo list",
+	"author": "Shamsudheen K C <ishamsumusthafa@gmail.com>",
+	"license": "MIT",
 	"packageManager": "yarn@3.5.0",
 	"version": "0.1.0",
 	"private": true,

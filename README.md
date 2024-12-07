@@ -1,39 +1,48 @@
-# Todo Web app
+# Todo web app
 
----
-The foundation of this repository is built upon the custom strucrure made for [heedlabs](https://heedlabs.com/) which is open sourced
+### Author
+Shamsudheen K C  
+[Email](mailto:ishamsumusthafa@gmail.com)  
+[GitHub Profile](https://github.com/ishamsu)
 
-The font used in the design appears to be Sans Serif fonts so used font-serif
+| Mobile, list todos       | desktop add todo        | desktop, list todos       |
+|-----------------|----------------|----------------|
+| ![Alt Text 1](/public/images/mobile-list-todos.webp) | ![Alt Text 2](/public/images/desktop-add-todo-modal.webp) | ![Alt Text 3](/public/images/desktop-list-todos.webp) |
 
-### Reference to the tools and converntions i used in to make code organized, readable and maintainable
 
-Volta is a hassle-free way to manage your JavaScript command-line tools - [volta](https://docs.volta.sh/guide/)
+### Reference to the tools and converntions I used in to make code organized, readable and maintainable
 
-Automatically lint your commit messages, code, and run tests upon committing or pushing - [husky](https://typicode.github.io/husky/)
+- **volta** - Volta is a hassle-free way to manage your JavaScript command-line tools - [https://docs.volta.sh/guide/](https://docs.volta.sh/guide/)
 
-Conventional Commits - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- **huksy** - Automatically lint your commit messages, code, and run tests upon committing or pushing - [https://typicode.github.io/husky/](https://typicode.github.io/husky/)
 
-Vincent Driessen's branching model - [gitflow](https://nvie.com/posts/a-successful-git-branching-model/)
+- **Conventional commits** - [https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)
 
-Airbnb style guide:rules for naming conventions - [airbnb-guide](https://airbnb.io/javascript/css-in-javascript/)
+- **gitflow** - Vincent Driessen's branching model - [https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)
+
+- **Airbnb style guide** - rules for naming conventions - [https://airbnb.io/javascript/css-in-javascript/](https://airbnb.io/javascript/css-in-javascript/)
 
 ---
 
 ### Installation
 
-You can install the depentencies via yarn:
+You can install the depentencies via yarn
 
-yarn install
+```yarn install```
 
 ### Usage
 
-run development server
+Run linter
 
-yarn run dev
+```yarn lint```
 
-### Contributing
+Run the development server
 
----
+```yarn run dev```
+
+Bundle code for production
+
+```yarn run build```
 
 ### License
 
