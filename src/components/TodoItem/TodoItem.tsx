@@ -26,7 +26,7 @@ export function TodoItem({todo, onToggle, onDelete}: iTodoItemProps) {
 			/>
 			<div className="flex-1  overflow-hidden">
 				<h3
-					className={`font-semibold text-xl md:text-2xl ${
+					className={`font-serif font-semibold text-xl md:text-2xl ${
 						todo.isComplated ? "line-through text-primary" : ""
 					} ${todo.title.length > TodosConstants.maxTitleLength ? "truncate" : ""}`}
 					title={todo.title}
@@ -34,7 +34,7 @@ export function TodoItem({todo, onToggle, onDelete}: iTodoItemProps) {
 					{todo.title}
 				</h3>
 				<p
-					className="text-sm md:text-base text-muted-foreground truncate font-normal"
+					className="font-serif text-sm md:text-base text-muted-foreground truncate font-normal"
 					title={todo.description}
 				>
 					{todo.description}
