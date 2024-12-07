@@ -5,9 +5,14 @@ Shamsudheen K C
 [Email](mailto:ishamsumusthafa@gmail.com)  
 [GitHub Profile](https://github.com/ishamsu)
 
-| Mobile, list todos       | desktop add todo        | desktop, list todos       |
-|-----------------|----------------|----------------|
-| ![Alt Text 1](/public/images/mobile-list-todos.webp) | ![Alt Text 2](/public/images/desktop-add-todo-modal.webp) | ![Alt Text 3](/public/images/desktop-list-todos.webp) |
+| Mobile, list todos  screen       | Mobile, add todo screen        | 
+|---------------------------|-------------------------|
+| ![mobile-screen-list-todos](/public/images/mobile-list-todos.webp) | ![mobile-screen-add-todo](/public/images/mobile-add-todo-drawer.webp) 
+
+| Desktop, list todos  screen       | Desktop, add todo screen        | 
+|---------------------------|-------------------------|
+| ![desktop-screen-list-todos](/public/images/desktop-list-todos.webp) | ![desktop-screen-add-todo](/public/images/desktop-add-todo-modal.webp) 
+
 
 
 ### Reference to the tools and converntions I used in to make code organized, readable and maintainable
