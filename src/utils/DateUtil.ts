@@ -11,7 +11,7 @@ export function getWeekDays(date: Date = new Date()): Date[] {
 }
 
 export function formatDate(date: Date): string {
-	return date.toISOString().split("T")[0];
+	return date.toISOString();
 }
 
 // Change the function name later
