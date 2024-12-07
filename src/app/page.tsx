@@ -1,3 +1,14 @@
+/**
+ * Todos
+ * - Implement todo view page where i can see full details of the todo selected
+ *  this is needed beacuse we can't show entire decription when listing todo if its very lengthy
+ *  so user can select a todo and view the entire description.
+ * - delete todo if we drag right side
+ * - edit todo if we drag on the right side
+ * - in mobile show edit screen in bottom drawer - imporovement
+ * - in desktop keep the same modal - imporvement
+ */
+
 "use client";
 
 import React, {useState} from "react";
@@ -6,12 +17,12 @@ import AddTodo from "@/components/AddTodo";
 import {useTodoStore} from "@/store/TodoStore";
 import TodoItem from "@/components/TodoItem";
 import Calendar from "@/components/Calendar";
-import {isSameDay} from "@/utils/DateUtil";
+import {isSameDay, modernFormatDate} from "@/utils/DateUtil";
 
 export default function Home() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [selectedDate, setSelectedDate] = useState(new Date());
-	const {todos, toggleTodo, deleteTodo} = useTodoStore();
+	const {todos, toggleTodo, deleteTodo, editTodo} = useTodoStore();
 
 	console.log("display todos after saving", todos);
 
@@ -29,7 +40,7 @@ export default function Home() {
 
 			<div className="px-3 md:px-0 max-h-screen overflow-y-auto">
 				<h3 className="scroll-m-20 text-xl font-semibold tracking-tight my-6">
-					Today
+					{modernFormatDate(selectedDate)}
 				</h3>
 				<div className="flex flex-col gap-4 ">
 					{selectedDateTodos.map((todo) => {
@@ -39,6 +50,7 @@ export default function Home() {
 								todo={todo}
 								onToggle={toggleTodo}
 								onDelete={deleteTodo}
+								onEdit={editTodo}
 							/>
 						);
 					})}

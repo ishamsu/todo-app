@@ -1,20 +1,75 @@
+/**
+ * Todos
+ * - frontend validations
+ * - write a schema using joi (https://joi.dev/)
+ * - define title maximum length
+ * - define descrion maximum length
+ * - implement loader
+ * - disable the btn if its loading
+ */
+
 import * as React from "react";
 
-import {Trash} from "lucide-react";
+import {Pencil, Save, Trash} from "lucide-react";
 
 import {iTodo} from "@/store/TodoStore";
 import TodosConstants from "@/config/constants/TodosConstants";
 
 import CheckBox from "../CheckBox";
 import Button from "../Button";
+import Input from "../Input";
+import Dialog from "../Dialog";
+import {DialogContent, DialogHeader, DialogTitle} from "../Dialog/Dialog";
 
 interface iTodoItemProps {
 	todo: iTodo;
 	onToggle: (id: string) => void;
 	onDelete: (id: string) => void;
+	onEdit: (id: string, title: string, description: string) => void;
 }
 
-export function TodoItem({todo, onToggle, onDelete}: iTodoItemProps) {
+export function TodoItem({todo, onToggle, onDelete, onEdit}: iTodoItemProps) {
+	const [isEditing, setIsEditing] = React.useState(false);
+	const [editedTitle, setEditedTitle] = React.useState(todo.title);
+	const [editedDescription, setEditedDescription] = React.useState(
+		todo.description,
+	);
+
+	const handleSave = () => {
+		onEdit(todo.id, editedTitle, editedDescription);
+		setIsEditing(false);
+	};
+
+	if (isEditing) {
+		return (
+			<Dialog open={isEditing} onOpenChange={setIsEditing}>
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>Edit todo</DialogTitle>
+					</DialogHeader>
+					<Input
+						value={editedTitle}
+						onChange={(e) => {
+							return setEditedTitle(e.target.value);
+						}}
+						placeholder="Todo title"
+					/>
+					<Input
+						value={editedDescription}
+						onChange={(e) => {
+							return setEditedDescription(e.target.value);
+						}}
+						placeholder="Todo description"
+					/>
+					<div className="flex gap-2">
+						<Button className="w-full" onClick={handleSave}>
+							<Save /> Save
+						</Button>
+					</div>
+				</DialogContent>
+			</Dialog>
+		);
+	}
 	return (
 		<div className="flex items-center gap-4 p-4 group bg-background rounded-lg ">
 			<CheckBox
@@ -41,6 +96,15 @@ export function TodoItem({todo, onToggle, onDelete}: iTodoItemProps) {
 				</p>
 			</div>
 			<div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+				<Button
+					variant="ghost"
+					size="icon"
+					onClick={() => {
+						return setIsEditing(true);
+					}}
+				>
+					<Pencil className="h-4 w-4" />
+				</Button>
 				<Button
 					variant="ghost"
 					size="icon"
