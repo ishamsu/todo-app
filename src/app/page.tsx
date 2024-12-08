@@ -43,6 +43,11 @@ export default function Home() {
 					{modernFormatDate(selectedDate)}
 				</h3>
 				<div className="flex flex-col gap-4 ">
+					{selectedDateTodos.length <= 0 && (
+						<p className="leading-7 font-normal text-center text-base">
+							Youre free today ...
+						</p>
+					)}
 					{selectedDateTodos.map((todo) => {
 						return (
 							<TodoItem
